@@ -15,6 +15,9 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+
+    
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -54,6 +57,11 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+
+    
+
+
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -83,6 +91,9 @@ return [
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
+
+    'available_locales' => ['en', 'ar'],
+
 
     /*
     |--------------------------------------------------------------------------

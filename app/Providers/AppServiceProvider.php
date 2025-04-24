@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use Illuminate\Support\Facades\App;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -17,8 +18,10 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
-    {
-        //
-    }
+    public function boot()
+{
+    $locale = session('locale', 'en'); // Default to English if no session exists
+    App::setLocale($locale);
+}
+
 }
