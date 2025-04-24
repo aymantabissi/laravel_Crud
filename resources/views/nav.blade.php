@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container d-flex justify-content-between {{ app()->getLocale() == 'ar' ? 'flex-row-reverse' : 'flex-row' }}">
+  <div class="container {{ app()->getLocale() == 'ar' ? 'flex-row-reverse' : 'flex-row' }} d-flex justify-content-between">
     <a class="navbar-brand" href="{{ route('contact.index') }}">{{ __('message.welcome') }}</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -7,12 +7,11 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav {{ app()->getLocale() == 'ar' ? 'me-auto' : 'ms-auto' }}">
+    <div class="collapse navbar-collapse {{ app()->getLocale() == 'ar' ? 'me-auto' : 'ms-auto' }}" id="navbarNav">
+      <ul class="navbar-nav align-items-center {{ app()->getLocale() == 'ar' ? 'me-auto' : 'ms-auto' }}">
         <li class="nav-item">
           <a class="nav-link" href="{{ route('contact.index') }}">{{ __('message.contacts') }}</a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link" href="{{ route('contact.create') }}">{{ __('message.add_contact') }}</a>
         </li>
@@ -57,6 +56,13 @@
               <a class="dropdown-item" href="{{ route('locale', 'ar') }}">العربية</a>
             </li>
           </ul>
+        </li>
+
+        <!-- Dark Mode Toggle -->
+        <li class="nav-item">
+          <button class="btn btn-sm btn-outline-light ms-2" id="toggle-dark" title="Toggle Dark Mode">
+            <i class="bi bi-moon-fill"></i>
+          </button>
         </li>
       </ul>
     </div>
